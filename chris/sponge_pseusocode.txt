@@ -1,0 +1,9 @@
+1. create a list of files in the image directory (glob)
+2. cycle through the list and load each image
+3. convert image to grayscale (opencv)
+4. create a thresholding function for each image (opencv)
+5. generate a list of contours for each image (opencv)
+6. sort the list by area (base python: sorted function)
+7. generate a bounding rectangle for the largest contours (opencv)
+8. crop the image using the verticies from the bounding rectangle (opencv)
+9. save the image (opencv)
