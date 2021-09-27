@@ -1,0 +1,398 @@
+Windows PowerShell
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\opencv_tutorial> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   my_readme_file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\opencv_tutorial> git add .
+PS C:\opencv_tutorial> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   my_readme_file.txt
+
+PS C:\opencv_tutorial> git commit -m "comment 1"
+[master 5a41905] comment 1
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+PS C:\opencv_tutorial> git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 285 bytes | 142.00 KiB/s, done.
+To https://github.com/fringe-ai/opencv_tutorial.git
+   06ee484..5a41905  master -> master
+PS C:\opencv_tutorial> git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 268 bytes | 29.00 KiB/s, done.
+From https://github.com/fringe-ai/opencv_tutorial
+   5a41905..e44e784  master     -> origin/master
+Updating 5a41905..e44e784
+ my_readme_file.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS C:\opencv_tutorial> ls
+
+
+    Directory: C:\opencv_tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         9/15/2021   4:03 PM             44 my_readme_file.txt
+
+
+    Directory: C:\opencv_tutorial
+
+----                 -------------         ------ ----
+d--h--         9/15/2021   4:03 PM                .git
+
+
+* master
+PS C:\opencv_tutorial> git branch tarek-branch
+PS C:\opencv_tutorial> git branch
+* master
+  tarek-branch
+PS C:\opencv_tutorial> git checkout tarek-branch
+Switched to branch 'tarek-branch'
+  master
+* tarek-branch
+PS C:\opencv_tutorial> git status
+On branch tarek-branch
+nothing to commit, working tree clean
+PS C:\opencv_tutorial> git push origin tarek-branch
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'tarek-branch' on GitHub by visiting:
+remote:      https://github.com/fringe-ai/opencv_tutorial/pull/new/tarek-branch
+remote:
+To https://github.com/fringe-ai/opencv_tutorial.git
+ * [new branch]      tarek-branch -> tarek-branch
+PS C:\opencv_tutorial> git pull 
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+Unpacking objects: 100% (3/3), 303 bytes | 37.00 KiB/s, done.
+From https://github.com/fringe-ai/opencv_tutorial
+ * [new branch]      chris_branch -> origin/chris_branch
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+If you wish to set tracking information for this branch you can do so with:
+
+
+PS C:\opencv_tutorial> get status
+included, verify that the path is correct and try again.
++ get status
++ ~~~
+    + FullyQualifiedErrorId : CommandNotFoundException
+PS C:\opencv_tutorial> git status
+On branch tarek-branch
+nothing to commit, working tree clean
+PS C:\opencv_tutorial> git branch
+  master
+* tarek-branch
+PS C:\opencv_tutorial> git fetch --all
+Fetching origin
+PS C:\opencv_tutorial> git branch
+  master
+* tarek-branch
+error: did you mean `--all` (with two dashes)?
+PS C:\opencv_tutorial> git pull --all
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+
+If you wish to set tracking information for this branch you can do so with:
+    git branch --set-upstream-to=origin/<branch> tarek-branch
+
+PS C:\opencv_tutorial> git branch
+  master
+* tarek-branch
+  origin/HEAD -> origin/master
+  origin/chris_branch
+  origin/tarek-branch
+PS C:\opencv_tutorial> git branch
+  master
+PS C:\opencv_tutorial> git branch -r
+  origin/chris_branch
+  origin/master
+  origin/tarek-branch
+PS C:\opencv_tutorial> git checkout chris_branch
+Switched to a new branch 'chris_branch'
+Branch 'chris_branch' set up to track remote branch 'chris_branch' from 'origin'.
+PS C:\opencv_tutorial> git branch
+* chris_branch
+  master
+  tarek-branch
+PS C:\opencv_tutorial> git checkout tarek-branch
+Switched to branch 'tarek-branch'
+From https://github.com/fringe-ai/opencv_tutorial
+   e44e784..bbf2755  tarek-branch -> origin/tarek-branch
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+
+    git branch --set-upstream-to=origin/<branch> tarek-branch
+PS C:\opencv_tutorial> get status
+get : The term 'get' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling   
+of the name, or if a path was included, verify that the path is correct and try again.
++ get status
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (get:String) [], CommandNotFoundException
+ 
+PS C:\opencv_tutorial> git status
+On branch tarek-branch
+nothing to commit, working tree clean
+PS C:\opencv_tutorial> git branch
+  chris_branch
+  master
+* tarek-branch
+PS C:\opencv_tutorial> git branch
+  chris_branch
+* tarek-branch
+PS C:\opencv_tutorial> git pull
+There is no tracking information for the current branch.
+See git-pull(1) for details.
+
+
+If you wish to set tracking information for this branch you can do so with:
+
+
+PS C:\opencv_tutorial> git branch
+  chris_branch
+* tarek-branch
+PS C:\opencv_tutorial> git push -d origin chris_branch
+error: failed to push some refs to 'https://github.com/fringe-ai/opencv_tutorial.git'
+PS C:\opencv_tutorial> git branch
+  master
+* tarek-branch
+warning: deleting branch 'chris_branch' that has been merged to
+         'refs/remotes/origin/chris_branch', but not yet merged to HEAD.
+Deleted branch chris_branch (was bbf2755).
+PS C:\opencv_tutorial> git branch
+  master
+* tarek-branch
+PS C:\opencv_tutorial> git checkout master
+Switched to branch 'master'
+PS C:\opencv_tutorial> git branch
+* master
+  tarek-branch
+PS C:\opencv_tutorial> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+  (use "git add <file>..." to include in what will be committed)
+        T_empty_readme.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\opencv_tutorial> git push origin master
+To https://github.com/fringe-ai/opencv_tutorial.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/fringe-ai/opencv_tutorial.git'
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS C:\opencv_tutorial> git commit -m "TFA edit"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        T_empty_readme.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\opencv_tutorial> git pull
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Total 9 (delta 1), reused 8 (delta 0), pack-reused 0
+From https://github.com/fringe-ai/opencv_tutorial
+   e44e784..9a50f33  master     -> origin/master
+Updating e44e784..9a50f33
+Fast-forward
+ chris/readme.txt   | 1 +
+ my_readme_file.txt | 4 +++-
+ readme.txt         | 0
+ 3 files changed, 4 insertions(+), 1 deletion(-)
+ create mode 100644 chris/readme.txt
+ create mode 100644 readme.txt
+Everything up-to-date
+PS C:\opencv_tutorial> mkdir tarek-new-dir
+
+
+    Directory: C:\opencv_tutorial
+
+
+Mode                 LastWriteTime         Length Name
+d-----         9/15/2021   4:30 PM                tarek-new-dir
+
+On branch master
+Your branch is up to date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        T_empty_readme.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\opencv_tutorial> git pull
+Already up to date.
+PS C:\opencv_tutorial> git push
+PS C:\opencv_tutorial> git branch
+* master
+  tarek-branch
+PS C:\opencv_tutorial> git push
+To https://github.com/fringe-ai/opencv_tutorial.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/fringe-ai/opencv_tutorial.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+remote: Enumerating objects: 4, done.
+remote: Compressing objects: 100% (2/2), done.
+Unpacking objects: 100% (3/3), 333 bytes | 12.00 KiB/s, done.
+From https://github.com/fringe-ai/opencv_tutorial
+   9a50f33..2f1839d  master     -> origin/master
+Updating 9a50f33..2f1839d
+Fast-forward
+ readme.txt => trevor/readme.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename readme.txt => trevor/readme.txt (100%)
+Everything up-to-date
+PS C:\opencv_tutorial> git push origin master
+Everything up-to-date
+PS C:\opencv_tutorial> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        T_empty_readme.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\opencv_tutorial> ls
+
+    Directory: C:\opencv_tutorial
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         9/15/2021   4:29 PM                chris
+d-----         9/15/2021   4:30 PM                tarek-new-dir
+d-----         9/15/2021   4:31 PM                trevor
+-a----         9/15/2021   4:29 PM             81 my_readme_file.txt
+-a----         9/15/2021   4:27 PM              0 T_empty_readme.txt
+PS C:\opencv_tutorial> git pull
+Already up to date.
+PS C:\opencv_tutorial> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+        tarek-new-dir/
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\opencv_tutorial> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   tarek-new-dir/T_empty_readme.txt
+
+PS C:\opencv_tutorial> git pull
+Already up to date.
+PS C:\opencv_tutorial> git push origin master
+Everything up-to-date
+PS C:\opencv_tutorial> git commit -m "added"
+[master 2057034] added
+ Committer: Tarek Firoze Akhtar <tarek.akhtar@lmi3d.net>
+Your name and email address were configured automatically based
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 tarek-new-dir/T_empty_readme.txt
+PS C:\opencv_tutorial> git push origin master
+Counting objects: 100% (5/5), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 411 bytes | 205.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/fringe-ai/opencv_tutorial.git
+   2f1839d..2057034  master -> master
+PS C:\opencv_tutorial> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+nothing to commit, working tree clean
+PS C:\opencv_tutorial> mkdir images
+
+    Directory: C:\opencv_tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         9/15/2021   4:36 PM                images
+
+
+PS C:\opencv_tutorial> git branch
+* master
+  tarek-branch
+PS C:\opencv_tutorial> git pull
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (5/5), done.
+Unpacking objects: 100% (6/6), 11.90 MiB | 13.35 MiB/s, done.
+From https://github.com/fringe-ai/opencv_tutorial
+   2057034..018e8ee  master     -> origin/master
+Updating 2057034..018e8ee
+Fast-forward
+ images/37958.png | Bin 0 -> 4081483 bytes
+ images/37965.png | Bin 0 -> 4213583 bytes
+ images/37971.png | Bin 0 -> 4178019 bytes
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 images/37958.png
+ create mode 100644 images/37965.png
+ create mode 100644 images/37971.png
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
+Unpacking objects: 100% (4/4), 572 bytes | 47.00 KiB/s, done.
+From https://github.com/fringe-ai/opencv_tutorial
+   018e8ee..0a8029d  master     -> origin/master
+Updating 018e8ee..0a8029d
+Fast-forward
+ chris/sponge_pseusocode.txt | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+ create mode 100644 chris/sponge_pseusocode.txt
+PS C:\opencv_tutorial> git pull
+Already up to date.
