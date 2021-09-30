@@ -12,7 +12,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "args": [
-                "--image","./images/37958.png"
+                "--images","./images/37958.png"
             ]
         }
     ]
