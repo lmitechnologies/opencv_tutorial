@@ -17,8 +17,8 @@ dim = (66, int(image.shape[0] * r))
 resized = cv2.resize(image, dim, interpolation=cv2.INTER_AREA)
 cv2.imshow("Reisized (Width)", resized)
 
-r = 50.0/image.shape[0]
-dim = (int(image.shape[1] *r), 50)
+r = 500.0/image.shape[0]
+dim = (int(image.shape[1] *r), 500)
 resized = cv2.resize(image, dim, interpolation = cv2.INTER_AREA)
 cv2.imshow("Resized (Height)", resized)
 cv2.waitKey(0)
