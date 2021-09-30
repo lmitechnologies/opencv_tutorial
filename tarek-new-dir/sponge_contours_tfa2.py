@@ -35,6 +35,8 @@ def main(args):
     cv2.imshow("Edges",autoCopy1)
     cv2.waitKey(0)
 
+
+
     maxArea = cv2.contourArea(cnts[0])
     maxPos = 0
     for i in range(len(cnts)):
