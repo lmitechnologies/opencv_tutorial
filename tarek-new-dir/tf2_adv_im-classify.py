@@ -97,6 +97,8 @@ model.compile(optimizer='adam',
 
 model.summary()
 #model summary showing parameters and details of diff layers
+#https://stackoverflow.com/questions/65960568/how-keras-can-calculate-the-number-of-parameters-at-early-stage-when-there-are-s
+#^explains number of parameters
 
 #model.fit run on training dataset and validation dataset. Validatation dataset will be none if not passed.
 epochs=10
@@ -193,6 +195,7 @@ plt.legend(loc='upper right')
 plt.title('Training and Validation Loss')
 plt.show()
 
+#training new data
 sunflower_url = "https://storage.googleapis.com/download.tensorflow.org/example_images/592px-Red_sunflower.jpg"
 sunflower_path = tf.keras.utils.get_file('Red_sunflower', origin=sunflower_url)
 
@@ -200,6 +203,7 @@ img = tf.keras.utils.load_img(sunflower_path, target_size=(img_height, img_width
 img_array = tf.keras.utils.img_to_array(img)
 img_array = tf.expand_dims(img_array, 0) # Create a batch
 
+#model.predict
 predictions = model.predict(img_array)
 score = tf.nn.softmax(predictions[0])
 
